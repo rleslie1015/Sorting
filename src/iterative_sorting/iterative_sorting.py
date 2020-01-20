@@ -2,22 +2,20 @@
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i #i guess this is a temp var
+        cur_index = i 
         smallest_index = cur_index
-        print(f'current item in outer loop {arr[i]}')
-        print(f'smallest {arr[smallest_index]}')
         # TO-DO: find next smallest element
-        
         #Loop through elements on right-hand-side of current index
         for j in range(i+1, len(arr)):
-            print(f'current index in innner loop {arr[j]}')
+            a = arr[j]
             #find the smallest index
-            if arr[j] < arr[smallest_index]:
-                smallest_index= j
-                print(f'smallest_index {arr[smallest_index]}')
-        
-                # Swap the element at current index with the smallest element found in above loop
-      
+            if a < cur_index:
+                smallest_index = a
+        # Swap the element at current index with the smallest element found in above loop
+        if(i != smallest_index):
+            arr[i] = arr[smallest_index]
+            arr[smallest_index] = arr[i]
+            
 
 
     return arr
