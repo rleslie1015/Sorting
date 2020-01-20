@@ -5,16 +5,19 @@ def selection_sort( arr ):
         cur_index = i #i guess this is a temp var
         smallest_index = cur_index
         print(f'current item in outer loop {arr[i]}')
+        print(f'smallest {arr[smallest_index]}')
         # TO-DO: find next smallest element
         
         #Loop through elements on right-hand-side of current index
         for j in range(i+1, len(arr)):
             print(f'current index in innner loop {arr[j]}')
             #find the smallest index
-            if cur_index < j:
+            if arr[j] < arr[smallest_index]:
+                smallest_index= j
+                print(f'smallest_index {arr[smallest_index]}')
+        
                 # Swap the element at current index with the smallest element found in above loop
-                j = smallest_index
-                print(j)
+      
 
 
     return arr
