@@ -25,11 +25,27 @@ selection_sort(items)
 print(items)
 
 # TO-DO:  implement the Bubble Sort function below
+# Bubble sort : Basically just goes throuht the list and compares two items and swaps those two items in order.
+# The loop stops after a list has no more items to swap.
 def bubble_sort( arr ):
+    for i in range(0, len(arr)):
+        print(arr[i+1])
+        print(arr[i])
+        if arr[i] < arr[i+1]:
+            smallest = arr[i]
+            arr[i] = arr[i+1]
+            print(arr[i])
+
+
+
+    # for i in range(0, len(arr)):
+
+
 
     return arr
-
-
+list2 = [5,4,3,2,1]
+bubble_sort(list2)
+print(list2)
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
