@@ -1,9 +1,14 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
+# Merge 2 sorted arrays
 def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
+    total_elements = len( arrA ) + len( arrB )
+    merged_arr = [0] * total_elements
     # TO-DO
-    
+    a = 0
+    b = 0
+    for i in range(total_elements):
+        if a >= len(arrA):
+            merged_arr = arrB[b]
     return merged_arr
 
 
@@ -17,7 +22,7 @@ def merge_sort( arr ):
         mid = len(arr) // 2
         left = merge_sort(arr[0 : mid])
         right = merge_sort(arr[mid:])
-        return(merge(left, right))
+        return merge(left, right)
     #  Start merging your single lists of one element together into larger, sorted sets
 
  

@@ -29,9 +29,13 @@ print(items)
 # The loop stops after a list has no more items to swap.
 def bubble_sort( arr ):
     # for i in range(0, len(arr)):
+    
+# 1. Loop through your array
     for i in range(0, len(arr) -1):
         for j in range(0, len(arr) - 1 - i):
+            #  - Compare each element to its neighbor
             if arr[j] > arr[j + 1]:
+                #    - If elements in wrong position (relative to each other, swap them)
                 temp = arr[j]
                 arr[j] = arr[j+1]
                 arr[j+1] = temp
