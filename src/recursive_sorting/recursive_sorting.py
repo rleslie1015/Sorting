@@ -7,8 +7,21 @@ def merge( arrA, arrB ):
     a = 0
     b = 0
     for i in range(total_elements):
+        # Check if either list is empty, if so append the other
         if a >= len(arrA):
-            merged_arr = arrB[b]
+            merged_arr[i] = arrB[b]
+            b += 1
+        elif b >= len(arrB):
+            merged_arr[i] = arrA[a]
+            a += 1
+        # Otherwise, compare and append the smallest of the two
+        elif arrA[a] < arrB[b]:
+            merged_arr[i] = arrA[a]
+            a += 1
+        else: 
+            merged_arr[i] = arrB[b]
+            b += 1
+
     return merged_arr
 
 
@@ -28,6 +41,7 @@ def merge_sort( arr ):
  
 
 list1 = [5,4,3,2,1]
+print("merge sort")
 merge_sort(list1)
 print(list1)
 # STRETCH: implement an in-place merge sort algorithm
